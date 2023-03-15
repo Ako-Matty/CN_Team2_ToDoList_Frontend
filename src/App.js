@@ -14,10 +14,9 @@ function App() {
   return (
     <div className="appWrapper">
       <h1>Team-2 Do Or Not To Do</h1>
-      
-    
+
     </div>
   );
-}
+};
 
 export default App;
