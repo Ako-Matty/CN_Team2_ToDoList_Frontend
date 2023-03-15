@@ -23,7 +23,7 @@ return (
             </label>
 
         <label>
-            Password:
+                Password:
         <input 
         placeholder="password"
         onChange={(e) => setPassword(e.target.value)} />
