@@ -1,0 +1,7 @@
+.header-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 12vh;
+    border-bottom: 5px solid rgb(0, 255, 17);
+  }

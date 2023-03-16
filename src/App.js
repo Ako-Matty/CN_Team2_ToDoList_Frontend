@@ -1,20 +1,25 @@
-import { useState, useEffecct } from "react"
+import { useState, useEffecct } from "react";
 import './App.css';
+
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+// import TodoContainer
 
 function App() {
 
-  const [user, setUser] = useState({
-    username:null,
-    pssword: null,
 
-  });
-  const [activeToDos, setActiveToDos ] = usestate();
-
+  const [activeToDos, setActiveToDos ] = useState([]);
+  const [doneTodos, setDoneTodos] = useState([]);
+  const [user, setUser] = useState(null);
+  const [ message, setMessage ] = useState();
 
 
 
-  const [users, setUsers, ] = usestate();
 
+ 
+
+
+ 
   return (
     <div className="appWrapper">
       <h1>Team-2 Do Or Not To Do</h1>
