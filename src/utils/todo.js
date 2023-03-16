@@ -1,4 +1,4 @@
-const addActiveToDoDb = async (todo) => {
+const addActiveToDoToDb = async (todo) => {
     try {
         const response = await fetch("http://localhost/activetodos/addtodo", {
         method: "POST",
@@ -15,7 +15,7 @@ const addActiveToDoDb = async (todo) => {
         console.log(error)
     }
 
-}
+};
 
 const addDoneToDoDb = async (todo) => {
     try {
@@ -33,8 +33,7 @@ const addDoneToDoDb = async (todo) => {
     } catch (error) {
         console.log(error)
     }
-
-}
+};
 
 const deleteActiveOrDoneTodoToDb = async (todo) => {
     try {
@@ -49,9 +48,7 @@ const deleteActiveOrDoneTodoToDb = async (todo) => {
                 todo: todo
         })
     });
-}catch (error){
+    }catch (error){
     console.log(error)
-}
-
-}
-
+    }
+};
