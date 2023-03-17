@@ -6,26 +6,25 @@ export const handleDeleteTodo = async (
     deleteFunc,
     url,
     setMessage
-) => {
+    ) => {
     e.preventDefault();
 
     const { setActiveTodos, setDoneTodos } = setter;
-
     const deletedTodo = await deleteFunc(todo, url);
 
     try {
-        if (deletedTodo > 0 && url === "activetodos/deleteactivetodo"){
+        if (deletedTodo > 0 && url === "activetodos/deleteactivetodos") {
             await setActiveTodos((el) =>
-            state.activeTodos.filter((el) =>el !== todo)
-            );
-            setMessage("Active Todo Deleted");
-        } else if (deletedTodo > 0 && url === "donetodos/deletedonetodo") {
+                state.activeTodos/filter((el) => el !== todo)
+                );
+            setMessage("Active todo deleted");
+        } else if (deletedTodo > 0 && url === "donetodos/deleteddonetodo") {
             await setDoneTodos((el) => state.doneTodos.filter((el) => el !== todo));
-            setMessage("Done Todo Deleted");
-        } else if (deletedTodo === 0 ) {
-            setMessage("Something Went Wrong");
-            throw new Error("Something Went Wrong");
-        }
+            setMessage("Done todo deleted");
+        } else if (deletedTodo === 0) {
+            setMessage("Something went wrong");
+            throw new Error("Something went wrong");
+        };
     } catch (error) {
         console.log(error)
     }
@@ -35,7 +34,6 @@ export const logOut = (e, setUser, setActiveTodos, setDoneTodos) => {
     e.preventDefault();
 
     setUser(null);
-
     setActiveTodos([]);
     setDoneTodos([]);
 
