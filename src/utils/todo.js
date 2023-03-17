@@ -1,4 +1,6 @@
-const addActiveToDoDb = async (todo) => {
+
+// =====Add active todo to DB=====
+export const addActiveToDoToDb = async (todo) => {
     try {
         const response = await fetch("http://localhost/activetodos/addtodo", {
         method: "POST",
@@ -11,13 +13,16 @@ const addActiveToDoDb = async (todo) => {
             todo: todo
         })
     });
+    const data = await response.json();
+    return data;
+
     } catch (error) {
         console.log(error)
     }
+};
 
-}
-
-const addDoneToDoDb = async (todo) => {
+// =====Add done todo to DB=====
+export const addDoneToDoToDb = async (todo) => {
     try {
         const response = await fetch("http://localhost/donetodos/adddoneto", {
         method: "POST",
@@ -30,13 +35,16 @@ const addDoneToDoDb = async (todo) => {
             todo: todo
         })
     });
+    const data = await response.json();
+    return data;
+
     } catch (error) {
         console.log(error)
     }
+};
 
-}
-
-const deleteActiveOrDoneTodoToDb = async (todo) => {
+// =====Delete active todo=====
+export const deleteActiveOrDoneTodoToDb = async (todo) => {
     try {
         const response = await fetch("http://localhost/activetodos/deleteactivetodo/donetodos/deletedonetodo", {
             method: "DELETE", 
@@ -49,9 +57,16 @@ const deleteActiveOrDoneTodoToDb = async (todo) => {
                 todo: todo
         })
     });
-}catch (error){
+    let deletionSucess;
+
+    if (response.ok && response.status ===204) {
+        deletionSucess = 1;
+    } else {
+        deletionSucess = 0;
+    }
+    return deletionSucess;
+
+    }catch (error){
     console.log(error)
-}
-
-}
-
+    }
+};
