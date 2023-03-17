@@ -6,11 +6,10 @@ export const handleDeleteTodo = async (
     deleteFunc,
     url,
     setMessage
-) => {
+    ) => {
     e.preventDefault();
 
-    const {setActiveTodos, setDoneTodos} = setter;
-
+    const { setActiveTodos, setDoneTodos } = setter;
     const deletedTodo = await deleteFunc(todo, url);
 
     try {
@@ -38,6 +37,6 @@ export const logOut = (e, setUser, setActiveTodos, setDoneTodos) => {
     setActiveTodos([]);
     setDoneTodos([]);
 
-    document.cookie =
-    "jwt_token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = 
+    "jwt_token=; expires=Thur, 01 Jan 1970 00:00:00 UTC; path=/;";
 };
